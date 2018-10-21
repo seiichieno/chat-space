@@ -1,0 +1,26 @@
+%header チャットグループが作成されました
+.chat
+  .chat-side
+    .side-header
+      Name
+      %i.fas.fa-cog.fa-pull-right
+      %i.fas.fa-edit.fa-pull-right
+    .side-group-list
+      = render partial: "group-list"
+      / %ul.group-list
+      /   %li.group
+      /     .group__name sampleグループ
+      /     %p.group__message テストメッセージ
+  .chat-main
+    .main-header
+      sampleグループ
+      .edit_button Edit
+      %p.main-header__member member : name1, name2
+    .main-body
+      = render partial: "main-message"
+    .main-footer
+      %form.message-type
+        %input.textbox{:placeholder => "type a message", :type => "text", :value => "", size: '90'}/
+        %label{ style: "margin-left: -5px;"}
+          %i.far.fa-image{ style: "margin-right: 10px;"}
+        %button.send-button{:type => "submit"} Send
