@@ -1,9 +1,10 @@
-%header チャットグループが作成されました
+%header
 .chat
   .chat-side
     .side-header
-      Name
-      %i.fas.fa-cog.fa-pull-right
+      = current_user.name
+      = link_to edit_user_path(current_user) do
+        %i.fas.fa-cog.fa-pull-right
       %i.fas.fa-edit.fa-pull-right
     .side-group-list
       = render partial: "group-list"
